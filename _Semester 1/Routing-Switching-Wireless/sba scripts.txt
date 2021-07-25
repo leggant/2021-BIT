@@ -1,0 +1,308 @@
+Switch 1
+
+en
+conf t
+hostname AL-S1
+spanning-tree mode rapid-pvst 
+spanning-tree portfast bpduguard default
+no ip domain-lookup 
+line con 0
+logging synchronous
+exit
+int range f0/1-24,g0/1-2
+switchport mode access
+shut
+exit
+ 
+vlan 12
+name Management
+vlan 31
+name Sales
+vlan 32
+name Marketing
+exit
+int vlan 12
+ip address 172.10.12.31 255.255.255.0
+no shut
+exit
+ip default-gateway 172.10.12.254
+int f0/5
+switchport mode trunk
+switchport trunk allow vlan 12,31,32
+switchport trunk native vlan 1
+switchport nonegotiate
+no shut
+exit
+
+int f0/6
+switchport access vlan 31
+no shut
+exit
+
+int range f0/1-2
+channel-group 3 mode desirable
+exit
+
+interface port-channel 3
+switchport mode trunk
+switchport trunk native vlan 1
+switchport trunk allowed vlan 12,31,32
+switchport nonegotiate
+no shut
+exit
+
+int range f0/1-2
+no shut
+exit
+
+spanning-tree vlan 12 root primary
+spanning-tree vlan 31 root secondary
+spanning-tree vlan 32 root primary
+
+SWITCH 2
+ 
+en
+conf t
+hostname AL-S2
+spanning-tree mode rapid-pvst 
+spanning-tree portfast bpduguard default
+no ip domain-lookup 
+line con 0
+logging synchronous
+exit
+int range f0/1-24,g0/1-2
+switchport mode access
+shut
+exit
+vlan 12
+name Management
+vlan 31
+name Sales
+vlan 32
+name Marketing
+exit
+int vlan 12
+ip address 172.10.12.32 255.255.255.0
+no shut
+exit
+ip default-gateway 172.10.12.254
+int f0/5
+switchport mode trunk
+switchport trunk allow vlan 12,31,32
+switchport trunk native vlan 1
+switchport nonegotiate
+no shut
+exit
+
+int f0/18
+switchport access vlan 32
+no shut
+exit
+int range f0/1-2
+channel-group 3 mode auto
+exit
+
+interface port-channel 3
+switchport mode trunk
+switchport trunk native vlan 1
+switchport trunk allowed vlan 12,31,32
+switchport nonegotiate
+no shut
+exit
+
+int range f0/1-2
+no shut
+exit
+
+spanning-tree vlan 12 root secondary
+spanning-tree vlan 31 root primary
+spanning-tree vlan 32 root secondary
+
+
+Router 1
+
+en
+conf t
+hostname AL-R1
+enable secret class
+line con 0
+password cisco
+login
+logging synchronous
+exit
+
+banner motd # No unauthorised access #
+int lo 1
+ip address 172.10.1.1 255.255.255.0
+exit
+int lo 2
+ip address 172.10.2.1 255.255.255.0
+exit
+int lo 3
+ip address 172.10.3.1 255.255.255.0
+exit
+int s0/1/0
+description Connection to router 2
+ip address 192.168.12.1 255.255.255.252
+no shut
+exit
+
+int g0/0/1.12
+description Management
+encapsulation dot1q 12
+ip address 172.10.12.253 255.255.255.0
+standby 12 ip 172.10.12.254
+standby 12 preempt
+standby 12 priority 110
+exit
+
+int g0/0/1.31
+description Sales
+encapsulation dot1q 31
+ip address 172.10.31.253 255.255.255.0
+standby 31 ip 172.10.31.254
+standby 31 preempt
+standby 31 priority 150
+exit
+
+int g0/0/1.32
+description Marketing
+encapsulation dot1q 32
+ip address 172.10.32.253 255.255.255.0
+standby 32 ip 172.10.32.254
+standby 32 preempt
+standby 32 priority 150
+exit
+
+int g0/0/1
+no shut
+exit
+
+router ospf 1
+router-id 1.1.1.1
+default auto-cost reference-bandwidth 1000
+passive-interface lo 1
+passive-interface lo 2
+passive-interface lo 3
+network 192.168.12.0 0.0.0.3 area 0
+network 172.10.12.0 0.0.0.255 area 0
+network 172.10.31.0 0.0.0.255 area 0
+network 172.10.32.0 0.0.0.255 area 0
+network 172.10.1.0 0.0.0.255 area 1
+network 172.10.2.0 0.0.0.255 area 1
+network 172.10.3.0 0.0.0.255 area 1
+area 1 range 172.10.0.0 255.255.252.0
+exit
+int s0/1/0
+ip ospf cost 15000
+ip ospf message-digest-key 1 md5 CISCO
+ip ospf authentication message-digest
+
+
+
+Router 3
+en 
+conf t
+hostname AL-R3
+no ip domain-lookup
+line con 0
+logging synchronous
+exit
+banner motd # No unauthorised access #
+int s0/0/0
+description Connection to Router 2 Internet
+ip address 192.168.12.6 255.255.255.252
+no shut
+exit
+int g0/1.12
+description Management
+encapsulation dot1q 12
+ip address 172.10.12.252 255.255.255.0
+standby 12 ip 172.10.12.254
+standby 12 preempt
+standby 12 priority 150
+exit
+int g0/1.31
+description Sales
+encapsulation dot1q 31
+ip address 172.10.31.252 255.255.255.0
+standby 31 ip 172.10.31.254
+standby 31 preempt
+standby 31 priority 110
+exit
+int g0/1.32
+description Marketing
+encapsulation dot1q 32
+ip address 172.10.32.252 255.255.255.0
+standby 32 ip 172.10.32.254
+standby 32 preempt
+standby 32 priority 110
+exit
+int g0/1
+no shut
+exit
+int lo 4
+ip address 172.20.44.4 255.255.255.0
+exit
+int lo 5
+ip address 172.20.45.5 255.255.255.0
+exit
+router ospf 1
+router-id 3.3.3.3
+auto-cost reference-bandwidth 1000
+network 192.168.12.4 0.0.0.3 area 0
+network 172.20.44.0 0.0.0.255 area 2
+network 172.20.45.0 0.0.0.255 area 2
+network 172.10.12.0 0.0.0.255 area 0
+network 172.10.31.0 0.0.0.255 area 0
+network 172.10.32.0 0.0.0.255 area 0
+area 2 range 172.20.44.0 255.255.254.0
+
+
+Router 2
+
+en
+conf t
+hostname AL-R2
+no ip domain-lookup
+line con 0
+logging synchronous
+exit
+int range g0/0-1
+shut 
+exit
+
+int lo 0
+description Connection port to internet
+ip address 200.7.12.18 255.255.255.240
+exit
+ip route 0.0.0.0 0.0.0.0 lo 0
+int s0/0/0
+description Connection to Router 1
+ip address 192.168.12.2 255.255.255.252
+clock rate 128000
+no shut
+exit
+int s0/0/1
+description Connection to Router 3
+ip address 192.168.12.5 255.255.255.252
+clock rate 128000
+no shut
+exit
+router ospf 1
+router-id 2.2.2.2
+default-information originate
+default auto-cost reference-bandwidth 1000
+network 192.168.12.0 0.0.0.3 area 0
+network 192.168.12.4 0.0.0.3 area 0
+exit
+int s0/0/0
+ip ospf cost 15000
+ip ospf message-digest-key 1 md5 CISCO
+ip ospf authentication message-digest
+exit
+int s0/0/1
+ip ospf cost 15000
+ip ospf message-digest-key 1 md5 CISCO
+ip ospf authentication message-digest
+exit

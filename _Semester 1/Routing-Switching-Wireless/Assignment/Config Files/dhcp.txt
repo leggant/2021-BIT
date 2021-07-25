@@ -1,0 +1,29 @@
+no ip dhcp excluded-address 192.168.11.225 192.168.11.227
+no ip dhcp excluded-address 192.168.11.1 192.168.11.3
+no ip dhcp excluded-address 192.168.11.33 192.168.11.35
+no ip dhcp excluded-address 192.168.11.65 192.168.11.67
+no ip dhcp excluded-address 192.168.11.97 192.168.11.99
+no ip dhcp excluded-address 192.168.11.249 192.168.11.251
+no ip dhcp excluded-address 192.168.11.228 192.168.11.231
+no ip dhcp excluded-address 192.168.11.241 192.168.11.250
+no ip dhcp excluded-address 192.168.11.254
+no ip dhcp excluded-address 172.16.1.1
+no ip dhcp excluded-address 192.168.21.1 192.168.21.2
+no ip dhcp excluded-address 192.168.21.33 192.168.21.34
+
+ip dhcp excluded-address 192.168.11.1 192.168.11.3 
+ip dhcp excluded-address 192.168.11.241 192.168.11.245
+ip dhcp excluded-address 192.168.11.248 192.168.11.251
+ip dhcp excluded-address 192.168.11.254
+ip dhcp excluded-address 192.168.11.33 192.168.11.35
+ip dhcp excluded-address 192.168.11.225 192.168.11.231  
+ip dhcp excluded-address 192.168.11.33 192.168.11.35
+ip dhcp excluded-address 192.168.11.65 192.168.11.67
+ip dhcp excluded-address 192.168.11.97 192.168.11.99 
+ip dhcp excluded-address 172.16.1.1 172.16.1.2
+ip dhcp excluded-address 192.168.21.1 192.168.21.2
+ip dhcp excluded-address 192.168.21.33
+ip dhcp excluded-address 192.168.21.40 192.168.21.43
+ip dhcp excluded-address 192.168.21.48 192.168.21.51
+
+

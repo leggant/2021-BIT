@@ -1,0 +1,2 @@
+Operating ystem acts as an interface between user and hardware.
+Kernel ats as an interface between applications and hardware.
