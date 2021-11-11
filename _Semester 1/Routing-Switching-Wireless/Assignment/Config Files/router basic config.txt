@@ -1,0 +1,102 @@
+enable
+configure terminal
+hostname ISP-Router-1
+enable secret class 
+username admin priv 15 secret cisco
+ip domain-name cisco.com
+ip ssh version 2
+crypto key generate rsa
+1024
+ip ssh version 2
+ip ssh time-out 60
+ip ssh authentication-retries 3
+line console 0  
+logging synchronous
+password cisco 
+login 
+exit 
+line vty 0 4 
+password cisco 
+login 
+transport input ssh
+exit 
+service password-encryption 
+banner motd #
+Enter TEXT message. End with a new line and the #
+***********************************************
+WARNING: Unauthorized access is prohibited!
+***********************************************
+#
+ipv6 unicast-routing
+interface gigabitethernet 0/0/0
+description Link to LAN 1
+ip address 10.0.1.1 255.255.255.0 
+ipv6 address 2001:db8:acad:1::1/64 
+ipv6 address fe80::1:a link-local
+no shutdown
+exit
+interface gigabitethernet 0/0/1
+description Link to LAN 2
+ip address 10.0.2.1 255.255.255.0 
+ipv6 address 2001:db8:acad:2::1/64 
+ipv6 address fe80::1:b link-local
+no shutdown
+exit
+interface serial 0/1/1
+description Link to R2
+ip address 10.0.3.1 255.255.255.0 
+ipv6 address 2001:db8:acad:3::1/64 
+ipv6 address fe80::1:c link-local
+no shutdown
+exit
+copy running-config startup-config 
+
+
+Verification
+
+show ip interface brief
+show ipv6 interface brief
+show running-config interface gigabitethernet 0/0/0
+show interfaces gigabitEthernet 0/0/0
+show ip interface gigabitethernet 0/0/0
+show ipv6 interface gigabitethernet 0/0/0
+show ip route
+show ipv6 route
+ping 10.0.3.2
+
+show running-config | section line vty
+show ipv6 interface brief | include up
+show ip interface brief | exclude unassigned
+show ip route | begin Gateway
+
+
+section - This displays the entire section that starts with the filtering expression.
+include - This includes all output lines that match the filtering expression.
+exclude - This excludes all output lines that match the filtering expression.
+begin - This displays all the output lines from a certain point, starting with the line that matches the filtering expression.
+
+
+DHCP Config
+
+ip dhcp excluded-address 192.168.11.225 192.168.11.227
+ip dhcp excluded-address 192.168.11.1 192.168.11.3
+ip dhcp excluded-address 192.168.11.33 192.168.11.35
+ip dhcp excluded-address 192.168.11.65 192.168.11.67
+ip dhcp excluded-address 192.168.11.97 192.168.11.99
+ip dhcp excluded-address 192.168.11.249 192.168.11.251
+ip dhcp excluded-address 192.168.11.228 192.168.11.231
+ip dhcp excluded-address 192.168.11.228 192.168.11.231
+ip dhcp excluded-address 192.168.11.241 192.168.11.250
+ip dhcp pool FINANCE-POOL
+network 192.168.11.0 255.255.255.224
+default-router 192.168.11.3
+ip dhcp pool SALES-POOL
+network 192.168.11.32 255.255.255.224
+default-router 192.168.11.35
+ip dhcp pool PERSONNEL-POOL
+network 192.168.11.64 255.255.255.224
+default-router 192.168.11.67
+ip dhcp pool ADMIN-POOL
+network 192.168.11.96 255.255.255.224
+default-router 192.168.11.99
+

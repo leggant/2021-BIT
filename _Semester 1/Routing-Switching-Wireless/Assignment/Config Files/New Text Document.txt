@@ -1,0 +1,15 @@
+https://www.davidc.net/sites/default/subnets/subnets.html?network=192.168.11.0&mask=24&division=19.72551
+https://www.davidc.net/sites/default/subnets/subnets.html?network=192.168.11.0&mask=24&division=15.7251
+
+https://www.davidc.net/sites/default/subnets/subnets.html?network=192.168.21.0&mask=24&division=13.7b00
+Basic Router Config
+
+Basic Switch Config
+
+site 2 switch config
+
+HO Router Config
+
+HO Dist Switch Config
+
+HO Access Switch Config
