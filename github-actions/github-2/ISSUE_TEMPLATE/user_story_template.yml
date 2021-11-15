@@ -1,0 +1,38 @@
+name: User Story
+description: Create A New User Story
+title: "[User Story]: Enter Title....."
+labels: [User Story]
+body:
+  - type: textarea
+    id: story-title
+    attributes:
+      label: User Story
+      description:
+        Remember to use the user story format
+        "As a _______ I need/want _______ so that I_________ in order to _________"
+      placeholder: As a _______ I need/want _______ so that I_________ in order to _________
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: Tag Related Issues, User Stories, Discussions Using Its Hash Tag
+      placeholder: "#2021 #2020 #999"
+  - type: dropdown
+    id: relates-to
+    attributes:
+      label: This User Story Relates To One Or More Of The Following
+      multiple: true
+      options:
+        - Security
+        - User Experience
+        - Code Quality
+        - Accessibility
+        - Testing, Quality Assurance
+  - type: checkboxes
+    id: checked-not-duplicate
+    attributes:
+      label: Confirm You Have Checked This User Story Is Unique
+      options:
+        - label: I Have Checked This User Story Is Not A Duplicate Of Another
+          required: true

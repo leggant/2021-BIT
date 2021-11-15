@@ -1,0 +1,17 @@
+name: Pull Request Reviews Reminder
+
+on:
+  schedule:
+    - cron: "10 16 * 8-11 1-6"
+jobs:
+  pr-reviews-reminder:
+    name: "Testing::: Github action test:: Pull Request Reviews Reminder"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: davideviolante/pr-reviews-reminder-action@v1.5.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        webhook-url: 'https://otagopoly.webhook.office.com/webhookb2/dff2c92e-097c-4d4c-a67d-1400199ddcbb@450e6824-88ab-4ad2-914d-b0f385da600c/IncomingWebhook/04b6124d8f7e4e828b66450c20971eb9/83ac2e7b-3d06-4f89-9775-232127186976'
+        provider: 'msteams'
+        channel: '#General'

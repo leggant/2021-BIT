@@ -1,0 +1,8 @@
+addReviewers: false
+addAssignees: author
+assignees:
+  - leggant
+  - s-winton
+  - revellgit
+  - scotms2
+numberOfAssignees: 1

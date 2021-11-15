@@ -1,0 +1,32 @@
+reviewers:
+  groups:
+    delta:
+      - leggant
+      - s-winton
+      - revellgit
+      - scotms2
+  per_author:
+    scotms2:
+      - leggant
+      - s-winton
+      - revellgit
+    revellgit:
+      - leggant
+      - s-winton
+      - scotms2
+    s-winton:
+      - revellgit
+      - scotms2
+      - leggant
+    leggant:
+      - s-winton
+      - revellgit
+      - scotms2
+options:
+  ignore_draft: true
+  ignored_keywords:
+    - DO NOT REVIEW
+    - NOT READY TO MERGE
+    - NOT FOR MERGE
+    - In Progress
+  enable_group_assignment: false
