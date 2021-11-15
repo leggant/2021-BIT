@@ -1,0 +1,20 @@
+Last week, you would have noticed the addition of two releases on the repo's right-hand panel (3 if you include the one that has a mistake but can't be deleted). 
+
+![image](https://user-images.githubusercontent.com/61127354/134096493-12ad4d7c-88b9-440d-b210-1051a3d0e2f5.png)
+
+One issue that was highlighted last week to all scrum masters, was that there was a lack of transparency from teams to both the product owner (Elise) and our boss (Martin). One solution for this is to create versions of the project at the end of each sprint.  
+
+Another useful and automated way we could do this is by using a changelog markdown file in the repo. This can be automatically generated but relies on the information provided in pull requests, commit messages etc.
+
+Progress updates in the ticket are probably going to be the most useful; they will get you to go back to the plan, check off completed items and remind you of what needs to be done next. This can then get translated over to the pull request, changelog etc.  Updates don't need to be huge; done regularly they won't be difficult to add to. 
+
+In addition to the above, I will also be adding a release with a summary at the end of each sprint; these are more for Martin so that he can see a release version at the end of each sprint
+
+Let me know what you think, how you want to tackle this. It's late in the game, so we do need to get this into our workflow starting asap.
+
+## Project Changelog
+
+https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/blob/sprint-4-auto-changelog/CHANGELOG.md
+
+![screencapture-github-BIT-Studio-4-team-project-2021-s2-team-delta-releases-tag-v1-0-0-2021-09-21-12_50_01 (1)](https://user-images.githubusercontent.com/61127354/134096290-01454461-9084-4453-b206-0214b69af1c6.png)
+![screencapture-github-BIT-Studio-4-team-project-2021-s2-team-delta-blob-sprint-4-auto-changelog-CHANGELOG-md-2021-09-21-12_52_44](https://user-images.githubusercontent.com/61127354/134096380-84c45e65-5114-4056-99b3-af268e05a7db.png)

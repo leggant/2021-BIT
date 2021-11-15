@@ -1,0 +1,58 @@
+name: User Story
+description: Create A New User Story
+title: "[User Story]: "
+labels: [User Story, triage]
+assignees:
+  - elise
+  - martin
+  - paul
+  - author
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Remember to use the format: `As a _______ I need/want _______ so that I_________ in order to achieve_________`
+  - type: input
+    id: Story
+    attributes:
+      label: Story Content
+      description: 
+      placeholder: As a _______ I need/want _______ so that I can_________ in order to achieve_________
+    validations:
+      required: true
+  - type: markdown
+    id: actions
+    attributes:
+      label: What Needs to Be Done
+      description: Also tell us, what should happen to ensure this objective can be achieved?
+      value: |
+	""
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: What version of our software are you running?
+      options:
+        - 1.0.2 (Default)
+        - 1.0.3 (Edge)
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: What browsers are you seeing the problem on?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+  - type: checkboxes
+    id: approved
+    attributes:
+      label: Approved by Client
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true        - Microsoft Edge

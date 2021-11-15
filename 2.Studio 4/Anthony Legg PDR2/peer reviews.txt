@@ -1,0 +1,11 @@
+Matt Revell
+4-5
+Matt actively took part in team discussions, planning, scrum events, 
+Mitchell Scott
+Mitchell did an awesome job securing the site, and making changes needed to create the features requested. He proactively addressed authentication/security issues as these came up. 
+
+
+Sam Winton
+
+Sam did an amazing job with the database backups to the VM, creating remote storage for evidence uploads, and securing uploaded file URLs. His work with wireframing proposed changes to the UI was really helpful, it provided some really useful feedback and direction for the project. The feedback could have been followed up with changes in the wireframes, to make these an solid guide for developing the UI.
+

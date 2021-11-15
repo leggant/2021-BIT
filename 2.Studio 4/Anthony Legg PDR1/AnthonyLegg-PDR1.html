@@ -1,0 +1,1922 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 16px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1.2rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+  --bg-color: hsl(0, 0%, 100%);
+  --write-bg: hsl(0, 0%, 100%);
+  --link-bg: none;
+  --mark-bg: #bf2c24;
+  --code-bg: hsl(0, 100%, 90%);
+  --quota-bg: hsl(0, 0%, 97%);
+  --codeb-bg: hsl(0, 0%, 95%);
+  --thead-bg: hsl(0, 0%, 91%);
+  --tbody-bg: hsl(0, 0%, 93%);
+  --title-color: hsl(0, 0%, 5%);
+  --text-color: hsl(0, 0%, 20%);
+  --mark-color: hsl(0, 0%, 20%);
+  --quota-color: hsl(0, 0%, 30%);
+  --code-color: hsl(0, 0%, 30%);
+  --codeb-color: hsl(0, 0%, 30%);
+  --footer-color: hsl(0, 0%, 50%);
+  --link-color: #bf2c24;
+  --md-char-color: hsl(0, 100%, 85%);
+  --meta-content-color: hsl(0, 100%, 85%);
+  --link-hover: hsl(0, 100%, 85%);
+  --thead-hover: hsl(0, 0%, 99%);
+  --tbody-hover: hsl(0, 0%, 99%);
+  --window-border: 1px solid hsl(0, 0%, 95%);
+  --base-border: 1px solid hsl(0, 100%, 85%);
+  --base-borderl: 4px solid hsl(0, 100%, 85%);
+  --base-borderb: 1px dashed hsl(0, 100%, 85%);
+  --opt-borderb: 1px dashed hsl(215, 100%, 65%);
+  --base-shadow: 0px 8px 16px hsla(0, 0%, 0%, 0.2);
+  --opt-shadow: 0px 8px 16px 1px hsla(0, 0%, 0%, 0.3);
+  --img-shadow: var(--opt-shadow);
+  --code-shadow: none;
+  --quota-shadow: none;
+  --base-margin: 1rem auto;
+  --base-padding: 1px 4px;
+  --opt-padding: 1rem;
+  --lineheight: 1.75rem;
+  --base-font: -apple-system, "Poppins", "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+  --title-font: var(--em-font);
+  --em-font: "EB Garamond", Georgia, "Nimbus Roman No9 L", "Noto Serif CJK SC", "Songti SC", "Source Han Serif SC", "Source Han Serif CN", STSong, "AR PL New Sung", "AR PL SungtiL GB", NSimSun, SimSun, "TW\-Sung", "WenQuanYi Bitmap Song", "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", "AR PL UMing TW MBE", PMingLiU, MingLiU, serif;
+  --quota-font: "EB Garamond", Baskerville, Georgia, "Liberation Serif", "TW-Kai", "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, DFKai-SB, "TW\-Kai", curve, serif;
+  --monospace: "Cascadia code", "Sarasa Term SC", Monaco, "Deja Vu Sans Mono", Consolas, "Lucida Console", "Andale Mono", Courier;
+  --mermaid-alt-font-family: var(--base-font) !important;
+  --mermaid-font-family: var(--base-font) !important;
+}
+
+.quota {
+  background: var(--quota-bg);
+  color: var(--quota-color);
+  font-family: var(--quota-font);
+  font-size: 1.2rem;
+  box-shadow: var(--quota-shadow);
+}
+
+.quota-quota {
+  box-shadow: none;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+:after,
+:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body,
+button,
+input,
+select,
+textarea {
+  font: 400 1em/1.75 var(--base-font);
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* 去掉各Table cell 的边距并让其边重合 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 去除默认边框 */
+fieldset,
+img {
+  border: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: initial;
+  font-size: 1.6rem;
+}
+
+html,
+body,
+#write {
+  font-family: var(--base-font);
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: var(--lineheight);
+  color: var(--text-color);
+  text-align: justify;
+}
+
+content {
+  min-width: 500px;
+}
+
+.typora-node #write {
+  min-height: calc(100vh - 6em);
+}
+
+#write {
+  max-width: 914px;
+  min-width: 400px;
+  min-height: calc(100vh - 6em);
+  -webkit-font-smoothing: antialiased;
+  margin: 2rem auto;
+  padding: 4rem;
+}
+
+#write h1,
+#write h2 {
+  font-family: var(--title-font);
+  font-weight: 800;
+  line-height: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#write h1 {
+  font-size: 3rem;
+  margin: 3rem auto 4rem;
+}
+
+#write h1:before,
+#write h1:after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 50%;
+  margin: 1rem auto;
+}
+
+#write h1:before {
+  top: -1.5rem;
+  border-top: var(--opt-borderb);
+}
+
+#write h1:after {
+  top: 1.5rem;
+  border-top: var(--base-borderb);
+}
+
+#write h2 {
+  font-size: 2rem;
+  margin: 2rem auto 1rem;
+}
+
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+  font-family: var(--base-font);
+  font-weight: 600;
+  margin: 2rem auto 1rem;
+}
+
+#write h3:before,
+#write h4:before,
+#write h5:before,
+#write h6:before {
+  font-size: 0.9rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  padding: var(--base-padding);
+  border-radius: 5px;
+  background: #bf2c24;
+  color: var(--write-bg);
+}
+
+#write h3 {
+  font-size: 1.75rem;
+}
+
+#write h3::before {
+  content: "H3";
+}
+
+#write h4 {
+  font-size: 1.5rem;
+}
+
+#write h4::before {
+  content: "H4";
+}
+
+#write h5,
+#write h6 {
+  font-size: 1.25rem;
+}
+
+#write h5::before {
+  content: "H5";
+}
+
+#write h6::before {
+  content: "H6";
+}
+
+#write h1 *,
+#write h2 *,
+#write h3 *,
+#write h4 *,
+#write h5 *,
+#write h6 * {
+  background: none;
+  color: var(--title-color);
+  border: none;
+}
+
+#write blockquote,
+#write pre.md-fences,
+#write pre.md-meta-block,
+#write figure>table,
+#write img {
+  margin: var(--base-margin);
+  border-radius: 5px;
+  padding: var(--opt-padding);
+}
+
+#write ul,
+#write ol {
+  margin: var(--base-margin);
+}
+
+#write p+p {
+  margin: 1rem auto;
+}
+
+#write code,
+#write mark,
+#write kbd,
+#write samp,
+#write tt,
+#write var,
+#write ins {
+  margin: 0 4px;
+  padding: var(--base-padding);
+  border-radius: 5px;
+  font-family: var(--monospace);
+}
+
+#write pre.md-meta-block {
+  min-height: 30px;
+  position: sticky;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+}
+
+#write pre.md-fences {
+  display: block;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: var(--code-shadow);
+  white-space: pre;
+  border: 1px solid;
+}
+
+#write pre.md-meta-block,
+#write pre.md-fences,
+#write code {
+  line-height: 1.5rem;
+  font-family: var(--monospace);
+  font-size: smaller;
+  background-color: var(--codeb-bg);
+  color: var(--codeb-color);
+}
+
+.cm-s-inner .CodeMirror-cursor {
+  border-left: solid var(--link-color) !important;
+}
+
+#write code {
+  background-color: var(--code-bg);
+  color: var(--code-color);
+}
+
+#write a,
+#write ins {
+  background: var(--link-bg);
+  color: var(--link-color);
+  text-decoration: none;
+  border-bottom: var(--base-borderb);
+}
+
+#write a:hover,
+#write ins:hover {
+  border-bottom-color: var(--link-color);
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+#write strong,
+#write em {
+  font-family: var(--em-font);
+  font-weight: 800;
+  color: var(--title-color);
+}
+
+#write em {
+  border-bottom: var(--opt-borderb);
+}
+
+#write mark {
+  background: var(--mark-bg);
+  color: var(--mark-color);
+}
+
+#write ul,
+#write ol {
+  margin-left: 1.5rem;
+}
+
+#write ul li::marker,
+#write ol li::marker {
+  color: #bf2c24;
+}
+
+#write ul {
+  list-style: disc;
+}
+
+#write ul ul {
+  list-style: circle;
+  margin-left: 1rem;
+}
+
+#write ol {
+  list-style: decimal-leading-zero;
+}
+
+#write ol ol {
+  list-style: lower-roman;
+  margin-left: 1rem;
+}
+
+#write ol ol,
+#write ul ul,
+#write ol ul,
+#write ul ol {
+  margin-top: 0.5rem;
+}
+
+#write ul li,
+#write ol li,
+#write li ul,
+#write li ol {
+  margin-left: 1rem;
+}
+
+#write blockquote {
+  background: var(--quota-bg);
+  color: var(--quota-color);
+  font-family: var(--quota-font);
+  font-size: 1.2rem;
+  box-shadow: var(--quota-shadow);
+}
+
+#write blockquote blockquote {
+  padding: 0;
+  padding-left: 1rem;
+  border-left: var(--base-borderl);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#write blockquote pre.md-fences {
+  box-shadow: none;
+}
+
+#write blockquote p {
+  color: var(--quota-color);
+  font-family: var(--quota-font);
+  line-height: var(--lineheight);
+}
+
+#write blockquote em,
+#write blockquote strong,
+#write blockquote mark {
+  font-size: 1rem;
+}
+
+#write img {
+  box-shadow: var(--img-shadow);
+  padding: 0;
+}
+
+#write img[alt|="no-shadow"] {
+  box-shadow: none !important;
+}
+
+#write img[alt|="normal"] {
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+#write hr {
+  border: none;
+  border-bottom: var(--base-border);
+  margin: 3rem auto;
+  height: 1px;
+  width: 50%;
+}
+
+#write hr .pb {
+  page-break-after: always;
+  border-bottom: none;
+}
+
+#write figure>table {
+  width: 98%;
+}
+
+#write table th,
+#write table thead th,
+#write table td {
+  padding: 0.5rem 1rem;
+}
+
+#write table th,
+#write table thead th {
+  background: var(--thead-bg);
+}
+
+#write table th:hover,
+#write table thead th:hover {
+  background: var(--thead-hover);
+  color: var(--link-hover);
+}
+
+#write table caption {
+  border-bottom: none;
+}
+
+#write table td {
+  background: var(--tbody-bg);
+  color: var(--text-color);
+  border: 1px solid var(--thead-bg);
+}
+
+#write table td:hover {
+  background: var(--tbody-hover);
+  color: var(--link-hover);
+}
+
+/*表格顶行*/
+#write table tr th{
+  border: 1px solid var(--thead-bg);
+}
+
+/*表格大小设置输入框(数字居中)*/
+#write .md-grid-board-wrap input{
+  text-align: center !important;
+}
+
+/*表格大小设置面板(防边界超出)*/
+#write .popover.bottom.md-table-resize-popover{
+  width: auto;
+  max-width: none;
+}
+
+/*表格大小设置面板中的方框*/
+#write .md-grid-board.md-reset>tbody>tr>td>a{
+  border-bottom: 1px solid var(--table-border-color) !important;
+}
+
+.ty-table-edit{
+	margin-top: -12px!important;
+}
+
+/*搜索*/
+#file-library-search-input{
+  padding-left: 0.4em;
+}
+
+#write sup.md-footnote {
+  padding: var(--base-padding);
+  color: var(--footer-color);
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.md-toc .md-toc-content .md-toc-h1 {
+  counter-increment: counter_md-toc-h1;
+  counter-reset: counter_md-toc-h2;
+}
+
+.md-toc .md-toc-content .md-toc-h1:before {
+  content: "第"counter(counter_md-toc-h1, cjk-ideographic) "章";
+}
+
+.md-toc .md-toc-content .md-toc-h2 {
+  counter-increment: counter_md-toc-h2;
+  counter-reset: counter_md-toc-h3;
+}
+
+.md-toc .md-toc-content .md-toc-h2::before {
+  content: "第"counter(counter_md-toc-h2, cjk-ideographic) "节";
+}
+
+.md-toc .md-toc-content .md-toc-h3 {
+  counter-increment: counter_md-toc-h3;
+  counter-reset: counter_md-toc-h4;
+}
+
+.md-toc .md-toc-content .md-toc-h3::before {
+  content: counter(counter_md-toc-h3);
+}
+
+.md-toc .md-toc-content .md-toc-h4 {
+  counter-increment: counter_md-toc-h4;
+  counter-reset: counter_md-toc-h5;
+}
+
+.md-toc .md-toc-content .md-toc-h4::before {
+  content: counter(counter_md-toc-h3) "."counter(counter_md-toc-h4);
+}
+
+.md-toc .md-toc-content .md-toc-h5 {
+  counter-increment: counter_md-toc-h5;
+  counter-reset: counter_md-toc-h6;
+}
+
+.md-toc .md-toc-content .md-toc-h5::before {
+  content: counter(counter_md-toc-h3) "."counter(counter_md-toc-h4) "."counter(counter_md-toc-h5);
+}
+
+.md-toc .md-toc-content .md-toc-h6 {
+  counter-increment: counter_md-toc-h6;
+  counter-reset: counter_md-toc-h6;
+}
+
+.md-toc .md-toc-content .md-toc-h6::before {
+  content: counter(counter_md-toc-h3) "."counter(counter_md-toc-h4) "."counter(counter_md-toc-h5) "."counter(counter_md-toc-h6);
+}
+
+.md-toc-h1::before,
+.md-toc-h2::before,
+.md-toc-h3::before,
+.md-toc-h4::before,
+.md-toc-h5::before,
+.md-toc-h6::before {
+  display: inline-block;
+  color: var(--text-color);
+  width: 4rem;
+}
+
+a.md-toc-inner {
+  margin-left: 0 !important;
+  border: none !important;
+}
+
+a.md-toc-inner::after {
+  content: "  ...................";
+  position: absolute;
+}
+
+.md-toc {
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.md-toc:before {
+  content: "目录";
+  display: block;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--link-color);
+  margin-bottom: 4rem;
+}
+
+.md-toc::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50% - 80px);
+  top: 4rem;
+  width: 160px;
+  height: 20px;
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  background: var(--toc-img);
+}
+
+.task-list-item input:before {
+  content: "";
+  position: relative;
+  top: -2px;
+  left: -5px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  border: var(--base-border);
+  background-color: var(--write-bg);
+  margin-left: 0;
+  margin-top: -0.5rem;
+  border-radius: 50%;
+  -webkit-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
+}
+
+.task-list-item input::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: -2px;
+  width: 1rem;
+  height: 0.5rem;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-right: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  opacity: 0;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+}
+
+.task-list-item input:checked::before {
+  background: #bf2c24;
+  border: none;
+}
+
+.task-list-item input:checked::after {
+  opacity: 1;
+}
+
+.task-list-item {
+  list-style: none;
+}
+
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before {
+  content: " ";
+}
+
+blockquote .task-list-item input::before {
+  top: -3px;
+}
+
+.md-task-list-item.task-list-done {
+  text-decoration: line-through;
+  color: var(--footer-color);
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner.cm-header {
+  color: hsl(215, 100%, 75%);
+}
+
+@media screen and (max-width: 600px) {
+  #write {
+    padding: 2rem;
+    line-height: 1.5rem;
+  }
+
+  #write h1,
+  #write h2 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  #write h3,
+  #write h4,
+  #write h5,
+  #write h6 {
+    font-size: 1rem;
+  }
+
+  #write h1,
+  #write h2,
+  #write h3,
+  #write h4,
+  #write h5,
+  #write h6 {
+    margin: 1.5rem 0;
+  }
+
+  #write h1:before,
+  #write h2:before,
+  #write h3:before,
+  #write h4:before,
+  #write h5:before,
+  #write h6:before {
+    display: inline;
+    border: none;
+    top: 0;
+    margin-right: 1rem;
+    background: none;
+    color: hsl(0, 100%, 85%);
+  }
+
+  #write h1::after,
+  #write h2::after,
+  #write h3::after,
+  #write h4::after,
+  #write h5::after,
+  #write h6::after {
+    border: none;
+  }
+
+  #write h1::before {
+    content: "#";
+  }
+
+  #write h2::before {
+    content: "##";
+  }
+
+  #write h3::before {
+    content: "###";
+  }
+
+  #write p+p {
+    margin: 1rem auto;
+  }
+
+  #write pre.md-fences {
+    padding: 1rem;
+    box-shadow: none;
+  }
+
+  #write blockquote {
+    background: var(--quota-bg);
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    border-radius: 0;
+    box-shadow: none;
+    border-left: var(--base-borderl);
+  }
+
+  #write blockquote blockquote {
+    padding-left: 1rem;
+  }
+
+  #write blockquote em,
+  #write blockquote strong,
+  #write blockquote mark {
+    font-family: var(--quota-font);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #write {
+    margin: 0;
+    background: transparent !important;
+  }
+
+  footer.ty-footer {
+    background: var(--bg-color);
+    border-top: 1px solid var(--bg-color);
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .typora-node #write {
+    min-height: calc(100% - 6em);
+  }
+
+  #write {
+    box-shadow: var(--base-shadow);
+    border-radius: 5px;
+  }
+
+  .md-toc-content {
+    margin-left: 4rem;
+  }
+}
+
+@media print {
+
+  html,
+  body,
+  #write {
+    border: none;
+    font-family: "noto serif cjk sc";
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: var(--lineheight);
+  }
+
+  .typora-export * {
+    -webkit-print-color-adjust: exact;
+  }
+
+  #write h1,
+  #write h2,
+  #write h3,
+  #write h4,
+  #write h5,
+  #write h6 {
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    color: #111;
+    line-height: 2rem;
+    font-family: "noto serif cjk sc";
+  }
+
+  #write h1 {
+    font-size: 1.75rem;
+  }
+
+  #write h2 {
+    font-size: 1.5rem;
+  }
+
+  #write h3,
+  #write h4,
+  #write h5,
+  #write h6 {
+    font-size: 1.25rem;
+  }
+
+  #write p {
+    line-height: var(--lineheight);
+    margin-top: 0;
+    margin-bottom: 0;
+    text-indent: 2rem;
+  }
+
+  #write blockquote {
+    position: relative;
+    margin: 1.75rem 2rem;
+    background: none;
+    color: #555;
+    font-weight: 300;
+  }
+
+  #write blockquote li {
+    font-family: var(--quota-font);
+  }
+
+  #write blockquote .task-list-item input::before {
+    top: -1px;
+  }
+
+  #write pre.md-fences {
+    background: hsl(0, 0%, 95%);
+  }
+
+  #write figure>table {
+    background: none;
+    margin: 1.75rem auto;
+  }
+
+  #write figure>table tr {
+    border-collapse: collapse;
+    border-bottom: 1px solid brown;
+  }
+
+  #write figure>table tr th,
+  #write figure>table tr td {
+    padding: 0.5rem 0;
+  }
+
+  #write code,
+  #write mark {
+    padding: 2px;
+    background: none;
+  }
+
+  #write mark {
+    color: var(--text-color);
+    background-color: hsl(60, 100%, 50%);
+  }
+
+  #write {
+    box-shadow: none;
+    border-radius: 0px;
+    margin: 0;
+    padding: 0;
+  }
+
+  #write h3:before,
+  #write h4:before,
+  #write h5:before,
+  #write h6:before {
+    content: "" !important;
+    background: none;
+  }
+
+  #write h1:before,
+  #write h1:after,
+  #write blockquote h1:before,
+  #write blockquote h1:after {
+    border: none;
+    height: 0;
+  }
+
+  #write p+p {
+    margin: 0;
+  }
+
+  #write blockquote,
+  #write pre.md-fences,
+  #write img {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  #write blockquote blockquote {
+    border-left: none;
+  }
+
+  #write mark {
+    font-family: "noto serif cjk sc";
+  }
+
+  #write table thead th,
+  #write table th,
+  #write table td {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #555;
+  }
+}
+
+:root {
+  --blur-text-color: #ccc;
+  --active-file-bg-color: hsl(0, 0%, 99%);
+  /* 文件列表 当前文件激活 背景色*/
+  --active-file-text-color: #bf2c24;
+  --active-file-border-color: #bf2c24;
+  /* 树形结构下文件激活边框色 */
+  --side-bar-bg-color: hsl(0, 0%, 95%);
+  /*文件 大纲 侧边栏 背景色*/
+  --item-hover-bg-color: var(--bg-color);
+  /* 打开文文件夹、正文菜单、最近使用 hover 效果 */
+  --item-hover-text-color: #bf2c24;
+  --primary-color: #bf2c24;
+  /* color of primary buttons */
+  --primary-btn-border-color: #bf2c24;
+  --primary-btn-text-color: hsl(0, 0%, 100%);
+  --select-text-bg-color: #e26f69;
+  --select-text-font-color: hsl(0, 0%, 100%);
+  --active-bg: hsl(0, 0%, 95%);
+  --window-border: var(--bg-color);
+  --control-text-color: var(--title-color);
+  --control-text-hover-color: var(--text-color);
+}
+
+.active-tab-files .info-panel-tab,
+.active-tab-outline .info-panel-tab {
+  color: var(--active-file-text-color);
+}
+
+.file-list-item:hover {
+  background: var(--item-hover-bg-color);
+  color: var(--item-hover-text-color);
+}
+
+.file-node-content:hover {
+  background: hsl(0, 0%, 100%, .5);
+  color: var(--control-text-hover-color);
+}
+
+.ty-search-item-line {
+  font-family: var(--base-font);
+}
+
+.ty-file-search-match-text {
+  background: var(--codeb-bg);
+}
+
+#typora-quick-open {
+  border-radius: 5px;
+}
+
+/* 大纲目录自动编号 */
+.sidebar-content {
+  counter-reset: h1;
+}
+
+.outline-h1 {
+  counter-increment: h1;
+  counter-reset: h2;
+}
+
+.outline-h2 {
+  counter-increment: h2;
+  counter-reset: h3;
+}
+
+.outline-h3 {
+  counter-increment: h3;
+  counter-reset: h4;
+}
+
+.outline-h4 {
+  counter-increment: h4;
+  counter-reset: h5;
+}
+
+.outline-h5 {
+  counter-increment: h5;
+  counter-reset: h6;
+}
+
+.outline-h1>.outline-item>.outline-label:before {
+  content: "章"counter(h1) " ";
+}
+
+.outline-h2>.outline-item>.outline-label:before {
+  content: "节"counter(h2) " ";
+}
+
+.outline-h3>.outline-item>.outline-label:before {
+  content: counter(h3) " ";
+}
+
+.outline-h4>.outline-item>.outline-label:before {
+  content: counter(h3) "."counter(h4) " ";
+}
+
+.outline-h5>.outline-item>.outline-label:before {
+  content: counter(h3) "."counter(h4) "."counter(h5) " ";
+}
+
+.outline-h6>.outline-item>.outline-label:before {
+  counter-increment: h6;
+  content: counter(h3) "."counter(h4) "."counter(h5) "."counter(h6) " ";
+}
+
+.md-meta {
+  font-family: var(--monospace);
+  color: var(--md-char-color);
+}
+
+.md-expand .md-meta.md-before,
+.md-expand .md-meta.md-after {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.md-image>.md-meta {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.md-image>img {
+  margin-top: 2px;
+}
+
+.md-image>.md-meta:first-of-type:before {
+  padding-left: 4px;
+}
+
+.dropdown-menu,
+.context-menu.dropdown-menu>li>a:focus {
+  background-color: var(--active-bg);
+}
+
+.context-menu.dropdown-menu>.active>a,
+.context-menu.dropdown-menu>li>a:hover,
+.menu-style-btn.active {
+  color: var(--primary-color);
+}
+
+/* 源代码模式 */
+
+#typora-source {
+  background: var(--bg-color);
+  color: var(--code-color);
+  line-height: 1.5rem;
+}
+
+/* 通知样式 */
+
+#md-notification {
+  border-radius: 5px;
+	background: transparent !important;
+}
+
+#md-notification::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  z-index: -111;
+  backdrop-filter: blur(5px);
+  top: 0;
+  width: 100%;
+  min-height: 5rem;
+  -webkit-font-smoothing: antialiased;
+  transition: opacity 1.2s cubic-bezier(.77, 0, .175, 1);
+}
+
+/* 聚焦模式 */
+.on-focus-mode .md-focus {
+  padding: 1rem;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .1);
+  background: antiquewhite var(--bg-img);
+  background-blend-mode: overlay;
+  border-radius: 5px;
+}
+
+.context-menu.dropdown-menu>li>a:focus {
+  background-color: var(--active-bg);
+}
+
+.context-menu.dropdown-menu>.active>a,
+.context-menu.dropdown-menu>li>a:hover,
+.menu-style-btn.active {
+  color: var(--primary-color);
+}
+
+.megamenu-menu {
+  box-shadow: 2px 2px 5px 0 #33333380, 2px 0px 10px 0 #33333380;
+}
+
+.megamenu-menu-list li {
+  line-height: 48px;
+}
+
+.megamenu-menu-list li a {
+  line-height: 48px;
+  height: 48px;
+}
+
+/* bugfix */
+.megamenu-opened .megamenu-menu {
+  left: -1px !important;
+}
+
+.megamenu-menu-list .saved #m-saved {
+  display: block;
+}
+
+#megamenu-section-about a{
+  color: var(--link-color);
+}
+
+#megamenu-menu-list {
+  background: #2f353a;
+}
+
+.megamenu-menu-panel h1,
+.megamenu-menu-panel h2 {
+  margin: 2rem auto;
+}
+
+.megamenu-menu-panel table tr {
+  background: transparent;
+}
+
+.megamenu-menu-panel tr:hover {
+  background: hsl(0, 0%, 95%);
+  color: var(--primary-color) !important;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+  background: var(--write-img);
+}
+
+.theme-preview-div:hover {
+  border-color: #80aaff80;
+}
+
+.theme-preview-div {
+  border: 4px solid #99999950;
+}
+
+.theme-preview-div.active,
+.theme-preview-div.active:hover {
+  border-color: var(--primary-color);
+}
+
+.nav-group-item.active {
+  background: var(--side-bar-bg-color) !important;
+  color: #bf2c24;
+}
+
+table#typora-help-md-table tr {
+  background: transparent;
+}
+
+.about-content-meta {
+  font-family: var(--base-font);
+}
+
+#top-titlebar {
+  height: 28px;
+  font-family: var(--base-font);
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.05);
+  background-clip: padding-box;
+}
+
+[draggable] {
+  cursor: pointer;
+}
+
+/* animation */
+.long-btn {
+  text-align: left;
+}
+
+#write td,
+#megamenu-content td,
+.file-list-item,
+.megamenu-menu li,
+.btn,
+.long-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+#write td:after,
+#megamenu-content td:after,
+.file-list-item:after,
+.megamenu-menu li:after,
+.btn:after,
+.long-btn:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.5s;
+}
+
+#write td:active:after,
+#megamenu-content td:active:after,
+.file-list-item:active:after,
+.megamenu-menu li:active:after,
+.btn:active:after,
+.long-btn:active:after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+.md-image>.md-meta {
+  color: var(--meta-content-color);
+}
+
+#typora-sidebar #outline-content .outline-h1>.outline-item,
+#typora-sidebar .outline-title-wrapper,
+#typora-sidebar .outline-item-wrapper.outline-h1>.outline-item,
+#typora-sidebar .file-library-node,
+#typora-sidebar .file-library-node .file-node-background {
+  transition: background 0.4s;
+}
+
+#typora-sidebar #ty-sidebar-footer .sidebar-footer-item {
+  transition: background 0.3s;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn {
+  background: var(--primary-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn:hover {
+  color: #111;
+}
+
+.unibody-window,
+.ty-preferences .windows,
+uni-preference-panel {
+  font-family: var(--base-font);
+}
+
+/* 搜索与替换 */
+#md-searchpanel.searchpanel-replace-mode {
+  max-height: 80px;
+}
+
+.unibody-window #md-searchpanel .btn {
+  line-height: 30px;
+}
+
+#top-titlebar,
+#top-titlebar * {
+  color: var(--text-color);
+}
+
+#typora-sidebar {
+  border: none;
+}
+
+#write {
+  background: var(--write-img);
+}
+
+html,
+content,
+#typora-source,
+.megamenu-content,
+#top-titlebar,
+#typora-sidebar,
+.windows-content,
+header.window-header,
+footer.ty-footer {
+  background: var(--bg-img);
+}
+
+#top-titlebar .toolbar-icon.btn.hover,
+#top-titlebar .toolbar-icon.btn:hover {
+  color: var(--link-color);
+}
+
+#top-titlebar #w-close:hover {
+  background-color: #f70505 !important;
+  color: #bf2c24 !important;
+}
+
+:root {
+  --bg-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAgMAAABjUWAiAAAADFBMVEXr5djn4dTp49bt59rT6LKxAAACnElEQVQozw3NUUwScRzA8d8R6MF8YMIx8uk47hDSJbj14IPzOGc7jPLvwTGg5uAYDbe2tt56cLtznvEnS6yDqCcEaWi91DvrbLJZz7b1aFtz1aO+2OZWvn+/+4CHeB6BMYaqBLfjPNRY6RFT2JJYby+uAk4WUTrtlmJ4hgPYb2q1XGDQjaK8pgJHvqNaAX+KyuIkDXpgQinb46nOulnn4b5laUHTxLfseeArAoNOeJlOIjdoal0n1FA7tKFv5roK+YaHOqP3P0XyKHPHY+MhTRe5uCZnKhtJKw2eSrSoBDPLtpZuNcFNJcFyiCMxOaaHIfXz1e8HQbWLySrBQ4x0x1qlhnHlnz2HQEC6TNb0gTHXa7IKhcaHqkE015hk9whA0YeWiLIXf7Fa2CZo3DjqjB4tTuF8jIcbfcEx5z/w4sXpQhXW+ju0cqh7icTFmRMaG+v6CIvTjcSpHcH8JEsF3EPh3fRthYdVLLgI2fWXm85/pGFE4l046s70L+yKCcirGFR+jbpy3kMmiCGHrSezVONsn1RBixncyk2PcVWk7DlgxHo8iZwDyq5uAUD854dZhdIFYzKoQig2haUKi1lVufz2RZUZPZ41n/hrOQB6h0Hhg8I367FNoEHgeM/KY7szSeQwD8q2WE3HM35ZLl0K1MJiOtHIkBclRQUwZnyOWcNsRQQgVLj1PSqkjF9DsoOSaSg3iinKzvfmgsNFFfpP/2T3GLGvL4fHEfwIX1sVvXcPqLztehWGcfn9nI2U9nTfCgJPe/jFPLZwgVEzimBgAm0VIyK2tt1cE/AzQdLK+SxLSQ4aDCZnnId94OG2S1XwvnTbNk/ZnhyRCQT+sZM6z9g6LXL1BOBe+zJySiFkHAINCtnQokbCJ/apCv0foqPiZVfhpywAAAAASUVORK5CYII=");
+  --write-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAgMAAABjUWAiAAAACVBMVEX28ef48+n69esoK7jYAAAB4UlEQVQozw2OsW4bQQxEhwLXkDrysGdEqRRgVShfQQq8wOr2jD0jSpXCLvwXbtKfADlFqgSwC/9ljqweZgYzQFnb/QGepYhA9jzmTc1WaSEtQpbFgjWATI00ZZtIckXx8q2Oe5yEByBy+RHOTcM+VVTadULsvxvRC/q8WTwgcWGD+Mnaqa0oy2gw2pKFzK+PzEsus5hP9AHojKslVynLlioVTBEN8cjDNnZoR1uMGTiZAAN47HxMtEkGUE9b8HWzkqNX5Lpk0yVziAJOs46rK1pG/xNuXLjz95fSDoJE5IqG23MAYPtWoeWPvfVtIV/Ng9oH3W0gGMPIOqd4MK4QZ55dV61gOb8Zxp7I9qayaGxp6Q91cmC0ZRdBwEQVHWzSAanlZwVWc9yljeTCeaHjBVvlPSLeyeBUT2rPdJegQI103jVS3uYkyIx1il6mslMDedZuOkwzolsagvPuQAfp7cYg7k9V1NOxfq64PNSvMdwONV4VYEmqlbpZy5OAakRKkjPnL4CBv5/OZRgoWHBmNbxB0LgB1I4vXFj93UoF2/0TPEsWwV9EhbIiTPqYoTHYoMn3enTDjmrFeDTIzaL1bUC/PBIMuF+vSSYSaxoVt90EO3Gu1zrMuMRGUk7Ffv3L+A931Gsb/yBoIgAAAABJRU5ErkJggg==");
+
+  /* 目录下图片，非背景 */
+  --toc-img: url("data:image/png;base64,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");
+}@import '';
+
+:root {
+  --bg-color: hsl(0, 0%, 25%);
+  --write-bg: hsl(0, 0%, 25%);
+  --link-bg: none;
+  --mark-bg: hsl(195, 100%, 50%);
+  --code-bg: #263238;
+  --quota-bg: hsl(0, 0%, 22%);
+  --codeb-bg: #263238;
+  --thead-bg: hsl(0, 0%, 16%);
+  --tbody-bg: hsl(0, 0%, 18%);
+  --title-color: hsl(0, 0%, 90%);
+  --text-color: hsl(0, 0%, 85%);
+  --mark-color: hsl(0, 0%, 30%);
+  --quota-color: hsl(0, 0%, 50%);
+  --code-color: hsl(0, 0%, 75%);
+  --codeb-color: hsl(0, 0%, 50%);
+  --footer-color: hsl(0, 0%, 30%);
+  --link-color: hsl(195, 100%, 50%);
+  --md-char-color: hsl(195, 100%, 60%);
+  --meta-content-color: hsl(195, 100%, 60%);
+  --link-hover: hsl(195, 100%, 60%);
+  --thead-hover: hsl(0, 0%, 24%);
+  --tbody-hover: hsl(0, 0%, 24%);
+  --window-border: 1px solid hsl(0, 0%, 95%);
+  --base-border: 1px solid hsl(195, 100%, 60%);
+  --base-borderl: 4px solid hsl(195, 100%, 60%);
+  --base-borderb: 1px dashed hsl(195, 100%, 60%);
+  --opt-borderb: 1px dashed hsl(215, 100%, 65%);
+  --base-shadow: 0px 8px 16px hsla(0, 0%, 0%, 0.2);
+  --opt-shadow: 0px 8px 16px 1px hsla(0, 0%, 0%, 0.3);
+  --img-shadow: var(--opt-shadow);
+  --code-shadow: none;
+  --quota-shadow: none;
+  --base-margin: 1rem auto;
+  --base-padding: 1px 4px;
+  --opt-padding: 1rem;
+  --lineheight: 1.75rem;
+  --mermaid-alt-font-family: var(--base-font) !important;
+  --mermaid-font-family: var(--base-font) !important;
+  --rawblock-edit-panel-bd: #9b9b9b1f;
+}
+
+/*退出源代码模式hover效果*/
+.typora-sourceview-on #toggle-sourceview-btn:hover{
+	color: var(--item-hover-text-color) !important;
+}
+
+#write h3:before,
+#write h4:before,
+#write h5:before,
+#write h6:before {
+  font-size: 0.9rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  padding: var(--base-padding);
+  border-radius: 5px;
+  background: hsl(195, 100%, 50%);
+  color: var(--title-color);
+}
+
+:root {
+  --blur-text-color: #333;
+  --active-file-bg-color: hsl(0, 0%, 24%);
+  /* 文件列表 当前文件激活 背景色*/
+  --active-file-text-color: hsl(195, 100%, 50%);
+  --active-file-border-color: hsl(195, 100%, 50%);
+  /* 树形结构下文件激活边框色 */
+  --side-bar-bg-color: hsl(0, 0%, 20%);
+  /*文件 大纲 侧边栏 背景色*/
+  --item-hover-bg-color: var(--bg-color);
+  /* 打开文文件夹、正文菜单、最近使用 hover 效果 */
+  --item-hover-text-color: hsl(195, 100%, 50%);
+  --primary-color: hsl(195, 100%, 50%);
+  /* color of primary buttons */
+  --primary-btn-border-color: hsl(195, 100%, 50%);
+  --primary-btn-text-color: hsl(0, 0%, 25%);
+  --select-text-bg-color: hsl(195, 100%, 50%);
+  --select-text-font-color: hsl(0, 0%, 25%);
+  --active-bg: hsl(0, 0%, 20%);
+  --window-border: var(--bg-color);
+  --control-text-color: var(--title-color);
+  --control-text-hover-color: var(--text-color);
+}
+
+.megamenu-menu-panel tr:hover {
+  background: hsl(0, 0%, 20%);
+  color: var(--primary-color) !important;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+  background-color: hsl(0, 0%, 15%);
+}
+
+.nav-group-item.active {
+  background: var(--side-bar-bg-color) !important;
+  color: hsl(195, 100%, 50%);
+}
+
+/* focus mode */
+.on-focus-mode .md-focus {
+  color: var(--link-color);
+  background: #333 var(--bg-img);
+}
+
+blockquote .md-focus {
+  color: var(--link-color)!important;
+}
+
+.cm-s-inner {
+  background-color: #263238;
+  color: #e9eded;
+}
+
+.cm-s-inner .CodeMirror-gutters {
+  background: #263238;
+  color: #537f7e;
+  border: none;
+}
+
+.cm-s-inner .CodeMirror-guttermarker,
+.cm-s-inner .CodeMirror-guttermarker-subtle,
+.cm-s-inner .CodeMirror-linenumber {
+  color: #537f7e;
+}
+
+.cm-s-inner .CodeMirror-cursor {
+  border-left: 1px solid #f8f8f0;
+}
+
+.cm-s-inner div.CodeMirror-selected {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.cm-s-inner.CodeMirror-focused div.CodeMirror-selected {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line>span::selection,
+.cm-s-inner .CodeMirror-line>span>span::selection {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line>span::-moz-selection,
+.cm-s-inner .CodeMirror-line>span>span::-moz-selection {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cm-s-inner .CodeMirror-activeline-background {
+  background: rgba(0, 0, 0, 0);
+}
+
+.cm-s-inner .cm-keyword {
+  color: #c792ea;
+}
+
+.cm-s-inner .cm-operator {
+  color: #e9eded;
+}
+
+.cm-s-inner .cm-variable-2 {
+  color: #80CBC4;
+}
+
+.cm-s-inner .cm-variable-3 {
+  color: #82B1FF;
+}
+
+.cm-s-inner .cm-builtin {
+  color: #DECB6B;
+}
+
+.cm-s-inner .cm-atom {
+  color: #F77669;
+}
+
+.cm-s-inner .cm-number {
+  color: #F77669;
+}
+
+.cm-s-inner .cm-def {
+  color: #e9eded;
+}
+
+.cm-s-inner .cm-string {
+  color: #C3E88D;
+}
+
+.cm-s-inner .cm-string-2 {
+  color: #80CBC4;
+}
+
+.cm-s-inner .cm-comment {
+  color: #546E7A;
+}
+
+.cm-s-inner .cm-variable {
+  color: #82B1FF;
+}
+
+.cm-s-inner .cm-tag {
+  color: #80CBC4;
+}
+
+.cm-s-inner .cm-meta {
+  color: #80CBC4;
+}
+
+.cm-s-inner .cm-attribute {
+  color: #FFCB6B;
+}
+
+.cm-s-inner .cm-property {
+  color: #80CBAE;
+}
+
+.cm-s-inner .cm-qualifier {
+  color: #DECB6B;
+}
+
+.cm-s-inner .cm-variable-3 {
+  color: #DECB6B;
+}
+
+.cm-s-inner .cm-tag {
+  color: #ff5370;
+}
+
+.cm-s-inner .cm-error {
+  color: #ffffff;
+  background-color: #EC5F67;
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+  color: var(--link-color);
+}
+
+/**apply to code fences with plan text**/
+.md-fences {
+  background-color: #263238;
+  color: #e9eded;
+  border: none;
+}
+
+.md-fences .code-tooltip {
+  background-color: #263238;
+}
+
+/*"退出源代码模式"背景*/
+.typora-sourceview-on #toggle-sourceview-btn{
+  background: none;
+}
+/*"退出源代码模式"hover效果*/
+.typora-sourceview-on #toggle-sourceview-btn:hover{
+  background: var(--item-hover-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+background: rgba(250, 250, 250, 0.2);
+background-clip: padding-box;
+}
+
+:root {
+  --write-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAgMAAABjUWAiAAAADFBMVEUWGBkYGhsdHyAfISI1t/v6AAAB5ElEQVQozxXQsYoTURSA4f/EeycZsDgDdySDjihk38Hy3GWi2J2BCaziQhaiaB+tt9AFu1kwvYUPsIXNPoB9BAUfwAfwEUzKv/v4odGrroyp9/rUaC6rZ5skv5F8qPsfYYP+yKUMymmAEEeW55oUR4o8jr05KNzJ07yvB7w0KKfLwcQUSjfmMU0PJfPHFoEVU+ohNrcKMEzMQ23FDnVSI2dqtYWI7KlLu6vE4UnyvKc3SJuL7lBbeEEl42ItpGLjzIT8PRJCmkRjVpVpsbJFVN0687okJNZiHAr5Z7MV0BnGIDc+THM1zlbieBc1Fq+tH5BH+OpnbWkj40hSqC8Lw2TvFuF0SUFJCk2IytXbjeqcRAt6NHpnrUkUU4KRzZs8RCK8N/Akn2W04LwxMU/V7XK0bDyN2RxfDyx7I4h5vjZby72V8UnOWumZL3qtYc+8DTE0siSBMXGhywx2dMYPnQHbxdFZ7deiNGxCCtD/QWnbwDoGhRYPDzUdUA3krjpnkvdAgDN4ddLkEQSov9qjd42HaDjI34gEqS9TUueAk+sc4qg5ws407KQYKs8G1jv4xBlqBVk6cb4dISZIwVi1Jzu4+HLk6lyfUxkXvwy+1Q+4WVdHIhwfybZ6CWVhxMEhShOgsP/HOW0MvZJeFwAAAABJRU5ErkJggg==");
+
+  --bg-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAElBMVEUQERMODxESFBYWGBkaHB0eICLm6ozJAAACkUlEQVQ4yyWTUdLbMAiEASfvoOkBkBy/O5keIE0v8E/uf5h+68qZWALELgu2MG9PP9qyvCzTVhrrsPGOCjvTfXQZvtp/W3Gy6LCITqs4q/DZ+KYl76zKzHVYpY2wNY27nqN1sbLGcrLH3/ENH4oWlGctsDu8AO+HzTLlsYdh8MzP1m6YDMz0ACfcimvakBj+mwO/+5Uta5teOD379sxK1fUxmUhv8MU3jUT5gs26PMephFznkLcpQZ6/dPL9C/GWHcCxDN6oZhD5xBm5qoYBPA+PFE/H1tXDWcWl8TW7rS+4dUzAVy0BIrvC4/HcqW2TkG1HO8q9dC23INAg7NA4AFRFkDTM2lfELPyFzi1VddcpX2z0KjHBUDmdLNJ6dDps4ytrX+FPsZwE31wSL+6OWfHOAJ3+Y0Rk/MiKfmWNPg7oVP/U3Ck9FoCkC2gBpALOiqbMNTkOe8P4FWkTD2Y9Q3+5VmV0uLUJBl68U5uAK2Kl6QDXvLxbwweOL2sixW78uU8p0ysfc7cWrF1j6B1sPJ4WgclYSnJN1bzozrhEcFHmRzBkbJWqqdG+EYJXRFmT5jnLXPUNF6WBdoFbTxYsmDXVLU/WA7MExNc93sJS5hIXDeLxzMScHzdhKvEkibr6cQXYPrmtmTA7JcInISrTzRDvShTdka0uVGrsJAAR6tSn1sKziZtfKVjAxPrJsYgZO0bye+vKTZ/DgoAoLGNO6jYHimZYTL/3pLJHawquJukjBpfz8WOGVSVIWx9ywUfS5iENutidRM4NzkAmxgUSQ68xgNOU+ZLalr4TS2V+D2xqukZig+Z9DilR7Nouzwp1cp/3E5q6Rdlf08obKvAM4qZ6pMr+w3PmQALSSBfjyZn5DwrNRVbywBQiAAAAAElFTkSuQmCC") !important;
+  font-size: 1.2rem;
+}
+#write {
+    max-width: 1200px;
+}
+
+</style><title>AnthonyLegg-PDR1</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='anthony-legg---studio-4-practice-pdr'><span>Anthony Legg - Studio 4 Practice PDR</span></h1><p><a href='https://GitHub.com/BIT-Studio-4/team-project-2021-s2-team-delta'><span>Link To GitHub Repo</span></a>
+<a href='https://bit-studio-management.herokuapp.com/'><span>Link To Studio Website</span></a></p><h2 id='evidence-for-submission'><span>Evidence For Submission</span></h2><h3 id='what-are-your-personal-goals-and-objectives-in-addition-to-the-course-objectives'><span>What are your personal goals and objectives in addition to the course objectives?</span></h3><p><span>Development of communication, leadership and stress-management skills continues to be a major goal. I think that I have improved in this area from last semester, in that I am more aware of what I am saying and how it is perceived. But there is definitely room for improvement. </span></p><hr /><h3 id='what-has-gone-well-what-are-your-strengths'><span>What has gone well? What are your strengths?</span></h3><p><span>I think the group has been verover has slowly Strengths are communication, reliability, empathy and self-motivation. The project team made a number of changes following the first sprint; placing more emphasis on working together and communicating more frequently. Despite the many challenges faced, the core team consistently worked together to overcome them and meet the clients objectives. </span></p><hr /><h3 id='what-could-have-gone-better-and-how'><span>What could have gone better and how?</span></h3><p><span>It has taken some time for the group to gel together. The first two sprints were particularly challenging because there was a tendency to avoid communicating; pushing to change this and handle the problems that arise because of it has consumed a lot of energy; this has affected my ability to document workflow processes and measure success. Communication of changes in the project need to improve as soon as possible; During the last two sprints, there has not been enough information getting added to some to the pull request, to be transferred to the QA to follow up and adjust the test suite. This disconnect is causing the test suite to be a cause of errors rather than the rest of the project.  This has meant that the last two sprints have not had a functional, reliable test suite. </span></p><hr /><h3 id='what-are-the-next-steps-to-take-what-is-your-plan-for-further-self-development'><span>What are the next steps to take? What is your plan for further self-development?</span></h3><p><span>Next steps are to keep actively engaging the team and pushing for more collaboration to occur. Had more of this been happening, the issues identified in sprint 1 could have been solved in sprint  2 rather than continuing into sprint 3 and possibly sprint 4. I feel that I need to take a step back from development of the code base, so that I can put more work into the product backlog, workflow processes and project automation. I am really keen to push the project automation, particularly with the GitHub and the management of deployments; Have access to a deployment monitoring application called </span><a href='https://docs.sentry.io/'><span>Sentry</span></a><span> which I would like to implement in the repo to monitor and alert us to issues. As student, we have free access to this service. Similar options are available, such as </span><a href='https://circleci.com/'><span>CircleCI</span></a><span>, but these have very limited education plans.</span></p><p><span>I would like to learn how to measure success, what the definition of success is, how to efficiently track  progress so that the group can use this to build on.</span></p><hr /><h3 id='what-barriers-exist-how-do-you-plan-to-deal-with-them'><span>What barriers exist? How do you plan to deal with them?</span></h3><p><span>Communication is the number one barrier right now. Getting buy-in from everyone in the group has been a massive challenge. I hate being demanding, but I feel like if I&#39;m not, then we all lose. I think getting more documentation on record will help us to not lose track during upcoming sprints.</span></p><p><span>Getting accurate information from the group is still difficult. For example, just this last week, we all approved code that was clearly broken, but was completely untested. This was in large part because we are all struggling to keep up with the workload, particularly during this lockdown. This was picked up a day or so later in the test deployment. This was a pretty big indication that there are issues with our current workflow, that don&#39;t work when we are under pressure.</span></p><p><span>From an automation perspective, I hope to make the dusk test GitHub action a requirement for every pull request to pass on both the staging and master branches. This can be done when sprint 3 code is merged to master. Having this in place will force the team pay attention when tests fail, something that we haven&#39;t had until now. As mentioned, I would like to get approval to install </span><a href='https://docs.sentry.io/'><span>Sentry</span></a><span> to the repo. A request for this was sent via email on the 4th September. This will provide status updates on deployments. </span></p><p><span>I would like to work on configuring Heroku&#39;s review app feature, this will test every pull request, by automatically deploying it to a temporary test environment and feed back the success or failure of the run. </span></p><hr /><h3 id='what-is-not-clear-or-is-uncertain'><span>What is not clear or is uncertain?</span></h3><p><span>I&#39;m not sure that I am doing what I need to be doing or what changes I need to put in place to ensure that the requirements for the project and the semester are met and there is sufficient evidence to prove it. Also, I have no idea who to listen to when it comes to the project backlog. Information is inconsistent and confusing, not just to me but also the others. </span></p><h1 id='learning-outcome-1'><span>Learning Outcome 1</span></h1><blockquote><p><span>Select and apply industry-standard tools and processes to solve non-trivial problems in a team environment.</span></p></blockquote><h2 id='11-contribute-to-development-of-new-product-features'><span>1.1 Contribute to development of new product features</span></h2><ol start='' ><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/pull/109'><span>Pull Request #109 - Update To Jetstream Template</span></a></li></ol><p><img src="images/image-20210905211425547.png" alt="image-20210905211425547" style="zoom:45%; display:inline;" /><img src="images/image-20210905222854917.png" alt="image-20210905222854917" style="zoom: 33%; display: inline;" />
+<span> </span><img src="images/now-20210905223413060.png" referrerpolicy="no-referrer" alt="image-20210905223413060"></p><h2 id='12-contribute-to-project-deployment'><span>1.2 Contribute to Project Deployment</span></h2><ol start='' ><li><p><span>Set-Up the pipeline configuration on Heroku, linked this back to the repo at the start of the semester</span></p><ul><li><span>Added the team as members</span>
+<img src="images/image-20210905200924361.png" alt="images/image-20210905200924361" style="zoom:50%; display: inline;" /><img src="images/image-20210905201035416.png" alt="images/image-20210905201035416" style="zoom: 50%; display: inline;" /><img src="images/image-32520210905201251726.png" alt="image-20210905201251726" style="zoom:50%;" /></li></ul></li><li><p><span>I have been testing a script to run deployments automatically each time a merge is added to the staging or master branch, this would have the added advantage of running migrations automatically for each deployment from staging and master branches. Currently this needs to be done manually.</span></p><ul><li><span>success status updates are returned to both GitHub and Teams via a webhook</span></li></ul></li><li><p><span>I made a failed attempt at setting up the review app for testing purposes, the artefacts&#39; from this are still present in the repo, I would like to get this set up and working correctly in the next sprint.</span>
+<img src="images/image-20210905214320650.png" style="zoom: 67%;" />
+<img src="images/image-20210905214617424.png" alt="image-20210905214617424" style="zoom:50%;" /></p></li></ol><ul><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/issues/104'><span>Issue #104 - GitHub Action - Check Deployment</span></a></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/pull/121'><span>Issue #121 - Sprint 2 GitHub Deployment Actions</span></a></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/issues/152'><span>Issue #152 - Monitoring Deployment</span></a></li></ul><hr /><h2 id='13--contribute-to-cicd-solution'><span>1.3  Contribute to CI/CD solution</span></h2><ul><li><p><span>Configured the GitHub Dusk testing action</span></p><ul><li><span>Work began on this in sprint 1 - is now ready to be deployed as a guard on the master and staging branches</span></li><li><span>also configured changes in the Laravel app settings which were preventing the Dusk test working on GitHub</span></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/pull/57'><span>Pull Request #57 - Sprint 1</span></a></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/pull/121'><span>Pull Request #121 - Sprint 2</span></a></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/pull/144'><span>Pull Request #144 - Sprint 3</span></a></li></ul></li><li><p><span>configured linter check GitHub action, set this so it prevents code that does not meet the standard from getting merged into the master or the staging branches.</span></p><ul><li><span>At the same time I added a prettier script to run through the whole project, and fix issues with spacing and messy code blocks. </span>
+<img src="images/image-20210905205321243.png" alt="image-20210905205321243" style="zoom:50%;" /></li></ul></li></ul><hr /><h2 id='14-demonstrate-improvements-in-applying-agile-project-management'><span>1.4 Demonstrate improvements in applying Agile project management</span></h2><ul><li><span>Set goals for each sprint, shared on both the </span><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/projects'><span>sprint project board</span></a><span> and on </span><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/milestones'><span>milestones</span></a></li></ul><p><img src="images/image-20210905212236161.png" alt="image-20210905212236161" style="zoom:50%;" />
+<img src="images/image-20210905212543133.png" alt="image-20210905212543133" style="zoom:50%;" /></p><ul><li><p><span>Respond to changes/issues</span>
+<img src="images/image-20210905222413066.png" alt="image-20210905222413066" style="zoom: 67%;" /></p></li><li><p><span>Consistent engagement via Teams, stand up meetings</span>
+<img src="images/image-20210905172549046.png" alt="image-20210905172549046" style="zoom:67%;" />
+<img src="images/image-20210905172855628.png" alt="image-20210905172855628" style="zoom: 50%;" />
+<img src="images/image-202109051946105332.png" alt="image-20210905194610533" style="zoom: 67%;" /></p></li><li><p><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/issues/132'><span>Improved Product Backlog Information</span></a></p><ul><li><span>We are adapting the backlog so that each item in a sprint has user stories, definition of the issue, potential solutions, task list of steps needed.</span></li></ul></li><li><p><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/discussions'><span>Project Discussion Pages</span></a></p><ul><li><span>to communicate, share ideas and </span><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/discussions/4'><span>resources</span></a></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/discussions/150'><span>get feedback on project workflow</span></a><span> improvements - (or, I am hoping to in this case)</span></li><li><span>Transfer </span><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/discussions/62'><span>items to the wiki</span></a></li></ul></li></ul><p><img src="images/image-20210905172331458.png" alt="image-20210905172331458" style="zoom: 50%;" /><img src="images/image-20210905211833296.png" alt="image-20210905211833296" style="zoom: 50%;" /></p><ul><li><p><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/wiki'><span>Project Wiki</span></a></p><ul><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/wiki/06.-Meeting-&amp;-Class-Scheduling'><span>Stand up Meeting Plan</span></a></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/wiki/03.-GitHub-Guide'><span>GitHub Guide</span></a><span> - Has been Neglected </span></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/wiki/01.-Project-Scrum-Guide'><span>Project Scrum Guide</span></a><span> - Needs to be updated</span></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/wiki/02.-Project-Sprint-Guide'><span>Project Sprint Plan</span></a><span> - Also needs to be completed.</span></li></ul></li></ul><h3 id='failed-addition-of-issue-forms-incompatible-with-private-repositories'><span>Failed: Addition of </span><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/pull/121'><span>Issue Forms</span></a><span> Incompatible With Private Repositories</span></h3><p><span>In sprint two, I developed a couple of issue form templates (</span><a href='https://user-images.githubusercontent.com/61127354/130374336-20e1b5df-d130-45a2-b7a2-98b84ea9f15b.png'><span>Form 1</span></a><span> + </span><a href='https://user-images.githubusercontent.com/61127354/130374356-a437e5d6-cafc-419a-a72e-7fc1f6011e96.png'><span>Form 2</span></a><span>) in a separate repo to standardise the information getting added to the issues/product backlog, and encourage everyone to provide more detailed information that would help to scope each sprint. I was unaware until it was deployed to the repos master branch that forms are not allowed in private repositories. I have included the pull request here to show that I have made an attempt to ensure that information getting added to the back log was consistent moving forward.</span></p><hr /><h2 id='15-use-industry-standard-communication-and-project-management-tools-in-a-professional-manner'><span>1.5 Use industry-standard communication and project management tools in a professional manner</span></h2><h3 id='meeting-summaries---discussion-board'><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/discussions/83'><span>Meeting Summaries - Discussion Board</span></a></h3><p><img src="images/image-20210905174945802.png" alt="image-20210905174945802" style="zoom:50%;" /></p><h3 id='teams-channel---stand-up-meetings'><span>Teams Channel - Stand Up Meetings</span></h3><p><span>These are now occuring daily, usually on Teams.</span></p><p><img src="images/image-20210905175316886.png" alt="image-20210905175316886" style="zoom: 67%;" />
+<img src="images/image-20210905175446719.png" alt="image-20210905175446719" style="zoom: 67%;" /></p><h1 id='learning-outcome-2'><span>Learning Outcome 2</span></h1><blockquote><p><span>Analyse and manage development challenges to create production-quality outputs.</span></p></blockquote><h2 id='21-contribute-to-automated-test-suite'><span>2.1 Contribute to automated test suite</span></h2><p><span>Have developed 2 fully functional tests so far.</span></p><ol start='' ><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/commits/sprint-1-laravel-deployment-testing'><span>Sprint 1 - sprint-1-laravel-deployment-testing</span></a></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/commits/sprint-2-github-deployment-actions'><span>Sprint 2 - sprint-2-github-deployment-actions</span></a></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/commits/sprint-3-github-dusk-action'><span>Sprint 3 - sprint-3-github-dusk-action</span></a></li></ol><p><img src="images/image-20210905180459817.png" alt="image-20210905180459817" style="zoom:40%;" /></p><h2 id='22-perform-a-security-audit-to-identify-potential-vulnerabilities'><span>2.2 Perform a security audit to identify potential vulnerabilities</span></h2><p><span>I set up Dependabot Alerts on GitHub last week, did not know this was something available to us. Writing this reminded me to add the others to get this alert. There is an alert up on there now. I&#39;m not sure what to do with it, there is an option to automatically fix it. But this might add new issues, so I have left that off.</span></p><p><img src="images/image-20210905202606788.png" alt="image-20210905202606788" style="zoom: 33%; display:inline;" /><img src="images/image-2021090520291415222.png" alt="image-2021090520291415222.png" style="zoom: 45%; display:inline;" /></p><h2 id='23-participate-in-codesolution-review-to-ensure-high-quality-outputs'><span>2.3 </span><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/pulls?q=is%3Apr+reviewed-by%3A%40me+is%3Aclosed'><span>Participate in code/solution review</span></a><span> to ensure high-quality outputs</span></h2><ol start='' ><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/pull/75#pullrequestreview-720604349'><span>Pull Request #75 - Sprint 1</span></a></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/pull/81#pullrequestreview-722997738'><span>Pull Request #81 - Sprint 1</span></a></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/pull/88'><span>Pull Request #88</span></a>
+<img src="images/image-20210905220916637.png" alt="image-20210905220916637" style="zoom:50%;" /></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/pull/106'><span>Pull Request #106</span></a></li><li><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/pull/134#pullrequestreview-741151610'><span>Pull Request #134 - Review 1</span></a><span> </span><a href='https://github.com/BIT-Studio-4/team-project-2021-s2-team-delta/pull/134#pullrequestreview-741254586'><span>+ Review 2</span></a></li></ol><p><img src="images/images-20210905221427384-16308388554391.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p></div></div>
+</body>
+</html>
