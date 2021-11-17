@@ -1,0 +1,63 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Friday, 20 August 2021 8:32:16 am
+   Source - C:\Users\Ant\OneDrive - Otago Polytechnic\BIT_Year 2\2.OPs Eng\Week 5\files\
+     Dest - C:\Users\Ant\OneDrive - Otago Polytechnic\BIT_Year 2\2.OPs Eng\Week 5\
+
+    Files : Backups
+	    
+Exc Files : FileModifier.jar
+	    
+  Options : /FP /TEE /S /E /DCOPY:DA /COPY:DAT /PURGE /MIR /B /IS /IM /MON:1 /MT:8 /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+ERROR : Invalid Parameter #16 : "-ErrorAction"
+
+       Simple Usage :: ROBOCOPY source destination /MIR
+
+             source :: Source Directory (drive:\path or \\server\share\path).
+        destination :: Destination Dir  (drive:\path or \\server\share\path).
+               /MIR :: Mirror a complete directory tree.
+
+    For more usage information run ROBOCOPY /?
+
+                                                          
+****  /MIR can DELETE files as well as copy them !
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Friday, 20 August 2021 8:32:48 am
+   Source : C:\Users\Ant\OneDrive - Otago Polytechnic\BIT_Year 2\2.OPs Eng\Week 5\files\
+     Dest : C:\Users\Ant\OneDrive - Otago Polytechnic\BIT_Year 2\2.OPs Eng\Week 5\
+
+    Files : Backups
+	    
+Exc Files : FileModifier.jar
+	    
+  Options : /FP /TEE /S /E /DCOPY:DA /COPY:DAT /PURGE /MIR /B /IS /IM /MON:1 /MT:8 /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	*EXTRA Dir        -1	C:\Users\Ant\OneDrive - Otago Polytechnic\BIT_Year 2\2.OPs Eng\Week 5\files\
+	  *EXTRA File 		   22823	C:\Users\Ant\OneDrive - Otago Polytechnic\BIT_Year 2\2.OPs Eng\Week 5\files\FileModifier.jar
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         1         1         0         0         1
+   Files :         0         0         0         0         0         1
+   Bytes :         0         0         0         0         0    22.2 k
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+   Ended : Friday, 20 August 2021 8:32:48 am
+
+
+2021/08/20 08:32:48 ERROR 2 (0x00000002) Waiting for Changes in Source Directory C:\Users\Ant\OneDrive - Otago Polytechnic\BIT_Year 2\2.OPs Eng\Week 5\files\
+The system cannot find the file specified.
+
+  Monitor : Waiting for 1 minutes and 0 changes...

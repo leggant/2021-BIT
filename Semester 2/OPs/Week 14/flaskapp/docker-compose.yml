@@ -1,0 +1,24 @@
+version: "3.0"
+services:
+  flaskapp:
+    container_name: flaskapp
+    image: flaskapp:lab14_2
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+  nginx:
+    container_name: nginx
+    image: nginx:lab14_2
+    restart: always
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - flaskapp
+networks:
+  app:
+    driver: bridge
